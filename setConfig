@@ -1,0 +1,43 @@
+﻿#!/bin/bash
+
+# Install dash-to-dock
+# gnome-shell-extension-installer 307
+
+# Enable the dash-to-dock extension
+# gnome-extensions enable dash-to-dock@micxgx.gmail.com
+
+# Configuratie als tekstblok
+DASH_TO_DOCK_CONFIG=$(cat <<EOF
+[org/gnome/shell/extensions/dash-to-dock]
+apply-custom-theme=false
+background-opacity=0.80000000000000004
+click-action='minimize-or-previews'
+custom-theme-shrink=false
+dash-max-icon-size=30
+dock-position='BOTTOM'
+extend-height=false
+height-fraction=0.90000000000000002
+isolate-workspaces=true
+multi-monitor=false
+preferred-monitor=-2
+preferred-monitor-by-connector='eDP-2'
+show-apps-at-top=false
+
+[settings-daemon/plugins/media-keys]
+terminal=@as []
+
+[settings-daemon/plugins/color]
+night-light-enabled=true
+night-light-schedule-automatic=false
+night-light-schedule-from=21.0
+
+[desktop/wm/preferences]
+mouse-button-modifier='<Alt>'
+
+[desktop/screensaver]
+lock-delay=uint32 1800
+EOF
+)
+
+# Sla het tekstblok op in een tijdelijk bestand en pas het toe
+dconf load / < <(echo "$DASH_TO_DOCK_CONFIG")
