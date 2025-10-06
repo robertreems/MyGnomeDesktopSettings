@@ -40,10 +40,10 @@ lock-delay=uint32 1800
 [gnome/shell]
 favorite-apps=['appimagekit-joplin.desktop', 'org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'chrome-kjbdgfilnfhdoflbpgamdcdgpehopbep-Default.desktop', 'chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Default.desktop', 'org.gnome.Terminal.desktop', 'org.keepassxc.KeePassXC.desktop', 'spotify_spotify.desktop', 'code.desktop', 'chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop']
 
-echo "Configuratie van Gnome settings is toegepast."
-
 EOF
 )
+
+echo "Configuratie van Gnome settings is toegepast."
 
 # Sla het tekstblok op in een tijdelijk bestand en pas het toe
 dconf load / < <(echo "$DASH_TO_DOCK_CONFIG")
