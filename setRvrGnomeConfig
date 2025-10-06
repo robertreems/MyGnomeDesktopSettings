@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 
 # Install dash-to-dock
 # gnome-shell-extension-installer 307
@@ -7,7 +7,7 @@
 # gnome-extensions enable dash-to-dock@micxgx.gmail.com
 
 # Configuratie als tekstblok
-DASH_TO_DOCK_CONFIG=$(cat <<EOF
+CONFIG=$(cat <<EOF
 [org/gnome/shell/extensions/dash-to-dock]
 apply-custom-theme=false
 background-opacity=0.80000000000000004
@@ -22,11 +22,12 @@ multi-monitor=false
 preferred-monitor=-2
 preferred-monitor-by-connector='eDP-2'
 show-apps-at-top=false
+shift-click-action='launch'
 
-[settings-daemon/plugins/media-keys]
+[org/gnome/settings-daemon/plugins/media-keys]
 terminal=@as []
 
-[settings-daemon/plugins/color]
+[org/gnome/settings-daemon/plugins/color]
 night-light-enabled=true
 night-light-schedule-automatic=false
 night-light-schedule-from=21.0
@@ -37,7 +38,7 @@ mouse-button-modifier='<Alt>'
 [desktop/screensaver]
 lock-delay=uint32 1800
 
-[gnome/shell]
+[org/gnome/shell]
 favorite-apps=['appimagekit-joplin.desktop', 'org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'chrome-kjbdgfilnfhdoflbpgamdcdgpehopbep-Default.desktop', 'chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Default.desktop', 'org.gnome.Terminal.desktop', 'org.keepassxc.KeePassXC.desktop', 'spotify_spotify.desktop', 'code.desktop', 'chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop']
 
 EOF
@@ -46,4 +47,4 @@ EOF
 echo "Configuratie van Gnome settings is toegepast."
 
 # Sla het tekstblok op in een tijdelijk bestand en pas het toe
-dconf load / < <(echo "$DASH_TO_DOCK_CONFIG")
+dconf load / < <(echo "$CONFIG")
