@@ -50,3 +50,34 @@ echo "Configuratie van Gnome settings is toegepast."
 
 # Sla het tekstblok op in een tijdelijk bestand en pas het toe
 dconf load / < <(echo "$CONFIG")
+
+# Enable autostart for Syncthing at login by creating a .desktop file
+AUTOSTART_DIR="$HOME/.config/autostart"
+AUTOSTART_FILE="$AUTOSTART_DIR/syncthing.desktop"
+
+mkdir -p "$AUTOSTART_DIR"
+
+if [ -f "$AUTOSTART_FILE" ]; then
+	echo "Autostart file already exists at $AUTOSTART_FILE — leaving unchanged."
+else
+	if command -v syncthing >/dev/null 2>&1; then
+		EXEC_CMD="syncthing -no-browser"
+	else
+		EXEC_CMD="syncthing -no-browser"
+		echo "Warning: 'syncthing' not found in PATH. Desktop file will still be created."
+	fi
+
+	cat > "$AUTOSTART_FILE" <<EOF
+[Desktop Entry]
+Type=Application
+Name=Syncthing
+Comment=Start Syncthing at login
+Exec=$EXEC_CMD
+Terminal=false
+X-GNOME-Autostart-enabled=true
+Hidden=false
+EOF
+
+	chmod 644 "$AUTOSTART_FILE"
+	echo "Created autostart file: $AUTOSTART_FILE"
+fi
