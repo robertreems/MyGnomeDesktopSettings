@@ -25,6 +25,7 @@ autohide=true
 intellihide=true
 intellihide-mode='ALL_WINDOWS'
 dock-fixed=false
+extend-height=false
 
 [org/gnome/settings-daemon/plugins/media-keys]
 terminal=@as []
@@ -81,3 +82,8 @@ EOF
 	chmod 644 "$AUTOSTART_FILE"
 	echo "Created autostart file: $AUTOSTART_FILE"
 fi
+
+
+# Set Git config.
+git config --global user.email "robertreems@gmail.com"
+git config --global user.name "Robert"
