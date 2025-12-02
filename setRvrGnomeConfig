@@ -27,9 +27,6 @@ intellihide-mode='ALL_WINDOWS'
 dock-fixed=false
 extend-height=false
 
-[org/gnome/settings-daemon/plugins/media-keys]
-terminal=@as []
-
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=true
 night-light-schedule-automatic=false
@@ -44,6 +41,10 @@ lock-delay=uint32 1800
 [org/gnome/shell]
 favorite-apps=['appimagekit-joplin.desktop', 'org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'chrome-kjbdgfilnfhdoflbpgamdcdgpehopbep-Default.desktop', 'chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Default.desktop', 'org.gnome.Terminal.desktop', 'org.keepassxc.KeePassXC.desktop', 'spotify_spotify.desktop', 'code.desktop', 'chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop']
 
+[org/gnome/desktop/input-sources]
+mru-sources=[('xkb', 'us')]
+per-window=false
+sources=[('xkb', 'us+intl')]
 EOF
 )
 
@@ -57,7 +58,6 @@ AUTOSTART_DIR="$HOME/.config/autostart"
 AUTOSTART_FILE="$AUTOSTART_DIR/syncthing.desktop"
 
 mkdir -p "$AUTOSTART_DIR"
-
 if [ -f "$AUTOSTART_FILE" ]; then
 	echo "Autostart file already exists at $AUTOSTART_FILE — leaving unchanged."
 else
@@ -82,7 +82,6 @@ EOF
 	chmod 644 "$AUTOSTART_FILE"
 	echo "Created autostart file: $AUTOSTART_FILE"
 fi
-
 
 # Set Git config.
 git config --global user.email "robertreems@gmail.com"
