@@ -1,10 +1,19 @@
 #!/bin/bash
 
+# Install Gnome extensions
 # Install dash-to-dock
-# gnome-shell-extension-installer 307
+gnome-shell-extension-installer 3210
+# transparent-window-moving@noobsai.github.com
+gnome-shell-extension-installer 1446
+# install compiz-alike-magic-lamp-effect@hermes83.github.com
+gnome-shell-extension-installer 3740
+gnome-shell-extension-installer 
+
+mv ./gschemas.compiled .local/share/gnome-shell/extensions/transparent-window-moving@noobsai.github.com/schemas/gschemas.compiled
 
 # Enable the dash-to-dock extension
-# gnome-extensions enable dash-to-dock@micxgx.gmail.com
+gnome-extensions enable compiz-alike-magic-lamp-effect@hermes83.github.com
+gnome-extensions enable transparent-window-moving@noobsai.github.com
 
 # Configuratie als tekstblok
 CONFIG=$(cat <<EOF
