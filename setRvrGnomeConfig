@@ -35,8 +35,8 @@ night-light-schedule-from=21.0
 [desktop/wm/preferences]
 mouse-button-modifier='<Alt>'
 
-[desktop/screensaver]
-lock-delay=uint32 1800
+[org/gnome/desktop/session]
+idle-delay=uint32 3600
 
 [org/gnome/shell]
 favorite-apps=['appimagekit-joplin.desktop', 'org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'chrome-kjbdgfilnfhdoflbpgamdcdgpehopbep-Default.desktop', 'chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Default.desktop', 'org.gnome.Terminal.desktop', 'org.keepassxc.KeePassXC.desktop', 'spotify_spotify.desktop', 'code.desktop', 'chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop']
