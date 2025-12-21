@@ -45,6 +45,9 @@ favorite-apps=['appimagekit-joplin.desktop', 'org.gnome.Nautilus.desktop', 'goog
 mru-sources=[('xkb', 'us')]
 per-window=false
 sources=[('xkb', 'us+intl')]
+
+[org/gnome/settings-daemon/plugins/media-keys]
+terminal=@as []
 EOF
 )
 
