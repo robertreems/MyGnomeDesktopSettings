@@ -48,6 +48,9 @@ sources=[('xkb', 'us+intl')]
 
 [org/gnome/settings-daemon/plugins/media-keys]
 terminal=@as []
+
+[org/gnome/desktop/sound]
+allow-volume-above-100-percent=true
 EOF
 )
 
