@@ -103,6 +103,29 @@ EOF
 	echo "Created autostart file: $AUTOSTART_FILE"
 fi
 
+# Auto start signal app
+SIGNAL_DESKTOP_FILE="/var/lib/snapd/desktop/applications/signal-desktop_signal-desktop.desktop"
+SIGNAL_AUTOSTART_FILE="$AUTOSTART_DIR/signal-desktop_signal-desktop.desktop"
+
+if [ -f "$SIGNAL_AUTOSTART_FILE" ]; then
+	echo "Signal autostart file already exists at $SIGNAL_AUTOSTART_FILE — leaving unchanged."
+else
+	cp "$SIGNAL_DESKTOP_FILE" "$SIGNAL_AUTOSTART_FILE"
+	echo "Created autostart file for Signal: $SIGNAL_AUTOSTART_FILE"
+fi
+
+# Auto start whatsapp app
+WHATSAPP_DESKTOP_FILE="/home/robert/.local/share/applications/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop"
+WHATSAP_AUTOSTART_FILE="$AUTOSTART_DIR/chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop"
+
+if [ -f "$WHATSAP_AUTOSTART_FILE" ]; then
+	echo "Whatsapp autostart file already exists at $WHATSAP_AUTOSTART_FILE — leaving unchanged."
+else
+	cp "$WHATSAPP_DESKTOP_FILE" "$WHATSAP_AUTOSTART_FILE"
+	echo "Created autostart file for WhatsApp: $WHATSAP_AUTOSTART_FILE"
+fi
+
+
 # Set Git config.
 git config --global user.email "robertreems@gmail.com"
 git config --global user.name "Robert"
