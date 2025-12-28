@@ -53,7 +53,7 @@ mouse-button-modifier='<Alt>'
 idle-delay=uint32 3600
 
 [org/gnome/shell]
-favorite-apps=['appimagekit-joplin.desktop', 'org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'chrome-kjbdgfilnfhdoflbpgamdcdgpehopbep-Default.desktop', 'chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Default.desktop', 'org.gnome.Terminal.desktop', 'org.keepassxc.KeePassXC.desktop', 'spotify_spotify.desktop', 'code.desktop', 'chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop']
+favorite-apps=['joplin-desktop_joplin-desktop.desktop', 'org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'chrome-kjbdgfilnfhdoflbpgamdcdgpehopbep-Default.desktop', 'chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Default.desktop', 'org.gnome.Terminal.desktop', 'org.keepassxc.KeePassXC.desktop', 'spotify_spotify.desktop', 'code.desktop', 'chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop']
 
 [org/gnome/desktop/input-sources]
 mru-sources=[('xkb', 'us')]
