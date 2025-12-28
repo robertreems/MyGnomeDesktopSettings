@@ -13,6 +13,7 @@ gnome-extensions enable compiz-alike-magic-lamp-effect@hermes83.github.com
 # Install GSConnect
 gnome-shell-extension-installer 1319 --no-install
 gnome-extensions install gsconnect@andyholmes.github.io.shell-extension.zip
+gnome-extensions enable gsconnect@andyholmes.github.io
 
 # Configuratie als tekstblok
 CONFIG=$(cat <<EOF
