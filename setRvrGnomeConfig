@@ -8,8 +8,17 @@
 
 # install compiz-alike-magic-lamp-effect@hermes83.github.com
 gnome-shell-extension-installer 3740
-
 gnome-extensions enable compiz-alike-magic-lamp-effect@hermes83.github.com
+
+# Install GSConnect
+gnome-shell-extension-installer 1319 --no-install
+gnome-extensions install gsconnect@andyholmes.github.io.shell-extension.zip
+gnome-extensions enable gsconnect@andyholmes.github.io
+
+# Transparent Window movement effect
+gnome-shell-extension-installer 1446 --no-install
+gnome-extensions install transparent-window-moving@noobsai.github.com.shell-extension.zip
+gnome-extensions enable transparent-window-moving@noobsai.github.com
 
 # Configuratie als tekstblok
 CONFIG=$(cat <<EOF
